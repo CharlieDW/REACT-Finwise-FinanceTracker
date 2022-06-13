@@ -1,0 +1,38 @@
+.navbar {
+  width: 100%;
+  background: var(--bg-light);
+  padding: 1.5rem 1rem;
+}
+
+.navbar ul {
+  max-width: 96rem;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.navbar a:link,
+.navbar a:visited {
+  padding: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar a,
+.navbar button {
+  margin-left: 2rem;
+}
+
+.title {
+  color: var(--primary-dark);
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.title span {
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+  font-size: 2.2rem;
+  margin-left: 2rem;
+}
