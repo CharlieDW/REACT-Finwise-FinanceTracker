@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
-import { projectAuth } from '../../firebase/config';
+import useSignup from '../../hooks/useSignup';
+import { PuffLoader } from 'react-spinners';
 
 import classes from './Signup.module.css';
 
 const Signup = () => {
+  const { isPending, error, signup } = useSignup();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setEmail('');
-    setPassword('');
-    setDisplayName('');
+    signup(email, password, displayName);
+
+    // setEmail('');
+    // setPassword('');
+    // setDisplayName('');
   };
 
   return (
@@ -23,7 +27,7 @@ const Signup = () => {
         <input
           type="text"
           id="displayName"
-          placeholder="CharlieDW"
+          placeholder="JohnDoe"
           value={displayName}
           onChange={(e) => setDisplayName(e.target.value)}
           required
@@ -34,7 +38,7 @@ const Signup = () => {
         <input
           type="email"
           id="email"
-          placeholder="charlie@example.com"
+          placeholder="johndoe@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -50,9 +54,16 @@ const Signup = () => {
           required
         />
       </div>
-      <button className="btn" type="submit">
-        Sign up
+      <button className="btn" type="submit" disabled={isPending}>
+        {!isPending && <span>Sign up</span>}
+        {isPending && (
+          <div className="btn-disabled">
+            <PuffLoader className={classes.spinner} loading={isPending} color="#9c84ff" size={25} />
+            <span>Loading...</span>
+          </div>
+        )}
       </button>
+      {error && <p className="error">{error}</p>}
     </form>
   );
 };

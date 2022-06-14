@@ -68,11 +68,36 @@ ul {
   color: var(--primary);
   border-radius: 5rem;
   cursor: pointer;
-  padding: 0.6rem 2rem;
+  padding: 0.4rem 2rem;
   transition: all 0.1s;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus:hover {
   background: var(--primary);
   color: #fff;
+}
+
+.btn:focus {
+  outline-color: var(--primary-dark);
+  background: var(--bg-light);
+  color: var(--primary-dark);
+}
+
+.btn:focus:hover {
+  outline-color: var(--primary);
+}
+
+.btn-disabled {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn:disabled:hover {
+  color: var(--primary);
+}
+
+.error {
+  font-size: 1.4rem;
+  color: #7f7f7f;
 }

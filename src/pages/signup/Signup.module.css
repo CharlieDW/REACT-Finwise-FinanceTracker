@@ -6,7 +6,7 @@
 
 .signup-form label {
   display: block;
-  margin: 1.5rem auto 0.5rem auto;
+  margin: 1.5rem auto 1.2rem auto;
 }
 
 .signup-form input {
@@ -14,13 +14,33 @@
   padding: 0.5rem 0.7rem;
 }
 
-.signup-form input:focus,
-.signup-form button:focus {
-  outline-color: var(--primary-dark);
-}
-
 .signup-form button {
   display: block;
   width: 50%;
-  margin: 5rem auto;
+  margin: 5rem auto 2rem auto;
 }
+
+.signup-form input:focus {
+  outline-color: var(--primary-dark);
+}
+
+@media only screen and (max-width: 415px) {
+  .signup-form {
+    margin: 3rem auto;
+    padding: 1rem;
+  }
+
+  .signup-form input {
+    padding: 0.3rem;
+  }
+
+  .signup-form button {
+    margin: 4rem auto 1.5rem auto;
+  }
+}
+
+@media only screen and (max-width: 395px) {
+  .signup-form {
+    padding: 0.3rem;
+  }
+} ;
