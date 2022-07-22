@@ -13,8 +13,8 @@ const Login = () => {
 
     login(email, password);
 
-    // setEmail('');
-    // setPassword('');
+    setEmail('');
+    setPassword('');
   };
 
   return (

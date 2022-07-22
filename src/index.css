@@ -66,6 +66,10 @@ ul {
   background: none;
   border: 2px solid var(--primary);
   color: var(--primary);
+}
+
+.btn,
+.btn-inverse {
   border-radius: 5rem;
   cursor: pointer;
   padding: 0.4rem 2rem;
@@ -78,7 +82,8 @@ ul {
   color: #fff;
 }
 
-.btn:focus {
+.btn:focus,
+.btn-inverse:focus {
   outline-color: var(--primary-dark);
   background: var(--bg-light);
   color: var(--primary-dark);
@@ -95,6 +100,23 @@ ul {
 
 .btn:disabled:hover {
   color: var(--primary);
+}
+
+.btn-inverse {
+  background: none;
+  color: white;
+  border: 2px solid white;
+  border-radius: 0.5rem;
+}
+
+.btn-inverse:hover,
+.btn-inverse:focus:hover {
+  background: white;
+  color: var(--primary);
+}
+
+.btn-inverse:focus:hover {
+  outline-color: var(--bg-light);
 }
 
 .error {

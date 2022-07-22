@@ -14,9 +14,9 @@ const Signup = () => {
 
     signup(email, password, displayName);
 
-    // setEmail('');
-    // setPassword('');
-    // setDisplayName('');
+    setEmail('');
+    setPassword('');
+    setDisplayName('');
   };
 
   return (
