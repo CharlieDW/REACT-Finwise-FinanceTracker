@@ -28,7 +28,7 @@ const Navbar = () => {
         )}
         {user && (
           <>
-            <li>Hello, {user.displayName}</li>
+            <li>{user.displayName}</li>
             <li>
               <button className="btn" type="button" onClick={logout}>
                 Log out
